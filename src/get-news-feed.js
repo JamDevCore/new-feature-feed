@@ -1,5 +1,6 @@
 import build from './build';
 import loader from './loader';
+import { closeFeed } from './index';
 
 const tag = {
   news: {
@@ -29,10 +30,8 @@ const addFeedItem = (record) => {
       }
     }
     if(record.title) {
-      const feedItemHeader = build('div', [{ name: 'class', value: 'feed-item-header'}]);
-      container.appendChild(feedItemHeader)
       const title = build('h3', [], record.title);
-      feedItemHeader.appendChild(title);
+      container.appendChild(title);
     }
     if(record.notes) {
       const text = build('p', [], record.notes);
@@ -43,7 +42,7 @@ const addFeedItem = (record) => {
       container.appendChild(link);
     }
 
-    const feed = document.querySelector('#feed-container-id')
+    const feed = document.querySelector('.feed')
     feed.appendChild(container);
   } catch (exception) {
     console.log(exception);
@@ -76,7 +75,8 @@ const getNewsFeed = (key, base, table) => {
         // This function (`page`) will get called for each page of records.
         feedContainer.innerHTML = '';
         addFeedHeader(feedContainer);
-
+        const feed = build('div', [{ name: 'class', value: 'feed'}]);
+        feedContainer.appendChild(feed);
         document.querySelector('.feed-closeButton').addEventListener('click', () => closeFeed())
         records.forEach(function(record) {
             console.log('Retrieved', record.get('title'));

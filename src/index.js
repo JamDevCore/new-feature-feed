@@ -3,15 +3,15 @@ import getNewsFeed from './get-news-feed';
 import loader from './loader';
 import build from './build';
 
-const closeFeed = () => {
+export const closeFeed = () => {
   try {
     const body = document.querySelector('body');
     body.removeChild(document.querySelector('#feed-container-id'));
   } catch (exception) {
     console.log(exception);
   }
+};
 
-}
 
 const showNewFeatureFeed = (key, base, table) => {
   try {

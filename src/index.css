@@ -1,34 +1,46 @@
 
 .feed-container-v1 {
   font-family: 'Helvetica';
+  color: #383838;
   position: fixed;
   right: 0;
   top: 0;
-  background-color: white;
   width: 400px;
   height: 100vh;
   box-shadow: 0px 5px 8px rgba(0,0,0,0.7);
+  background: #F8F8F8;
+}
+
+.feed {
+  padding: 10px 15px;
+  position: relative;
   overflow-y: scroll;
-  background: #f7f7f7;
+  height: calc(100% - 70px);
 }
 p {
   line-height: 20px;
 }
 
 .feed-item-v1 {
-  width: 85%;
   border-bottom: 1px solid #E8E8E8;
   margin: 10px auto;
-  padding: 1rem;
+  padding: 20px;
   background: white;
   color: #383838;
+  padding-bottom: 30px;
 }
 
 .feed-item-v1 > h3 {
-  margin: 0;
-  margin-top: 5px;
+  font-size: 24px;
+  margin: 5px 0 10px 0;
   color: #276AF1;
 }
+
+
+.feed-item-v1 > p {
+  margin: 5px 0 20px 0;
+}
+
 
 .loader {
   width: 50%;
@@ -36,7 +48,8 @@ p {
 }
 
 .feed-header {
-  margin: 0 0 20px 0;
+  position: relative;
+  margin: 0 0 0 0;
   width: 100%;
   background:#276AF1;
   display: flex;
@@ -55,7 +68,7 @@ p {
   color: white;
   border: none;
   font-size: 24px;
-  padding: 0 12px;
+  padding: 0 15px;
 }
 
 .feed-item-date {
@@ -65,17 +78,18 @@ p {
 }
 
 .feed-item-header {
-  line-height:  14px;
+  line-height: 14px;
   display: flex;
   justify-content: space-between;
 }
 
 .feed-item-badge {
   margin: auto 0;
-  font-size: 13px;
+  font-size: 12px;
   color: white;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 5px 10px;
   border-radius: 5px;
   height: 12px;
+  font-weight: bold;
 }
