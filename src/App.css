@@ -37,7 +37,7 @@ p {
 .feed-item-v1 > h3 {
   font-size: 24px;
   margin: 5px 0 10px 0;
-  color: #276AF1;
+  color: #A186EA;
 }
 
 
@@ -55,7 +55,7 @@ p {
   position: relative;
   margin: 0 0 0 0;
   width: 100%;
-  background:#276AF1;
+  background:#713FED;
   display: flex;
   justify-content: space-between;
 }
