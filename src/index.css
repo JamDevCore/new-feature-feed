@@ -8,6 +8,11 @@
   height: 100vh;
   box-shadow: 0px 5px 8px rgba(0,0,0,0.7);
   background: #F8F8F8;
+  z-index: 1000;
+}
+
+.feed-container-v1 > a {
+  text-decoration: underline !important;
 }
 
 .feed {
@@ -89,6 +94,5 @@ p {
   text-transform: uppercase;
   padding: 5px 10px;
   border-radius: 5px;
-  height: 12px;
   font-weight: bold;
 }
