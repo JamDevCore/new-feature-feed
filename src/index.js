@@ -1,4 +1,4 @@
-import styles from './styles';
+import './index.css'
 import initStyles from './init-styles';
 import getNewsFeed from './get-news-feed';
 import loader from './loader';
@@ -39,7 +39,7 @@ const showNewFeatureFeed = (key, base, table) => {
       const table = feedButton.getAttribute('data-airtable-table');
 
       if (!key || !base || !table) throw new Error('Please add config data to the script tag');
-      initStyles(styles);
+      initStyles();
       feedButton.addEventListener('click', () => {
         showNewFeatureFeed(key, base, table)
       });

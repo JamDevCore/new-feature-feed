@@ -1,9 +1,9 @@
 const initStyles = (stylesheet) => {
-  const script = document.createElement("script");
-  document.getElementsByTagName("head")[0].appendChild(script);
-  const styles = document.createElement('style')
-  styles.innerHTML = stylesheet;
-  script.appendChild(styles);
+  const styles = document.createElement('link')
+  styles.rel="stylesheet"
+  styles.type = "text/css"
+  styles.href = "https://unpkg.com/new-feature-feed/umd/main.487a3513.css"
+  document.getElementsByTagName("head")[0].appendChild(styles);
 }
 
 
