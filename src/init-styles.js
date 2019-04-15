@@ -1,9 +1,9 @@
-const initStyles = () => {
-  var ss = document.createElement("link");
-  ss.type = "text/css";
-  ss.rel = "stylesheet";
-  ss.href = "./src/index.css";
-  document.getElementsByTagName("head")[0].appendChild(ss);
+const initStyles = (stylesheet) => {
+  const script = document.createElement("script");
+  document.getElementsByTagName("head")[0].appendChild(script);
+  const styles = document.createElement('style')
+  styles.innerHTML = stylesheet;
+  script.appendChild(styles);
 }
 
 

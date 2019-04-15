@@ -1,5 +1,4 @@
-
-.feed-container-v1 {
+const styles = `.feed-container-v1 {
   font-family: 'Helvetica';
   color: #383838;
   position: fixed;
@@ -93,3 +92,4 @@ p {
   height: 12px;
   font-weight: bold;
 }
+`
