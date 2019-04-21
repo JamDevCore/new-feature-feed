@@ -1,53 +1,7 @@
 import build from './build';
 import loader from './loader';
 import { closeFeed } from './index';
-
-const tag = {
-  news: {
-    color: 'background-color:#F5CA61', label: 'News',
-  },
-  feature: {
-    color: 'background-color:#66DF9F', label: 'Feature',
-  },
-}
-
-const addFeedItem = (record) => {
-  try {
-    console.log(record)
-    const container = build('div', [{ name:'class', value: 'feed-item-v1'}, { name: 'id', value: record.title }]);
-    if(record.date) {
-      const feedItemHeader = build('div', [{ name: 'class', value: 'feed-item-header'}]);
-      container.appendChild(feedItemHeader)
-      const date = build('p', [{ name: 'class', value: 'feed-item-date'}], record.date);
-      feedItemHeader.appendChild(date);
-      container.appendChild(feedItemHeader);
-      if(record.tag) {
-        const badge = build('span', [
-          { name: 'class', value: 'feed-item-badge'},
-          { name: 'style', value: tag[record.tag].color },
-        ], tag[record.tag].label);
-        feedItemHeader.appendChild(badge);
-      }
-    }
-    if(record.title) {
-      const title = build('h3', [], record.title);
-      container.appendChild(title);
-    }
-    if(record.notes) {
-      const text = build('p', [], record.notes);
-      container.appendChild(text);
-    }
-    if(record.link) {
-      const link = build('a', [{ name: 'href', value: record.link }], 'Read more');
-      container.appendChild(link);
-    }
-
-    const feed = document.querySelector('.feed')
-    feed.appendChild(container);
-  } catch (exception) {
-    console.log(exception);
-  }
-}
+import addFeedItem from './add-feed-item';
 
 const addFeedHeader = (feedContainer) => {
   try {
@@ -63,7 +17,7 @@ const addFeedHeader = (feedContainer) => {
 
 const getNewsFeed = (key, base, table) => {
   try {
-    const feedContainer = document.querySelector('#feed-container-id');
+    const feedContainer = document.querySelector('#nff-container-id');
     feedContainer.innerHTML = loader;
     const Airtable = require('airtable');
     const currentBase = new Airtable({apiKey: key}).base(base);
