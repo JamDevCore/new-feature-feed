@@ -1,6 +1,6 @@
 {
   "name": "new-feature-feed",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A simple way to include a feed of the latest features and news for visitors to your site or application",
   "main": "lib/index.js",
   "module": "es/index.js",
