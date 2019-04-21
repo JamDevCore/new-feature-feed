@@ -10,6 +10,11 @@ const tag = {
 }
 
 const sendReaction = (event) => {
+  const feedButton = document.querySelector('#nff-init');
+  const key = feedButton.getAttribute('data-airtable-key');
+  const base = feedButton.getAttribute('data-airtable-base');
+  const table = feedButton.getAttribute('data-airtable-table');
+
   const { attributes } = event.srcElement;
   const recordId = attributes['data-record-id'].value;
   const elementId = attributes.id.value;
@@ -17,13 +22,13 @@ const sendReaction = (event) => {
   const reactionType = attributes['data-reaction-type'].value;
 
   var Airtable = require('airtable');
-  var base = new Airtable({apiKey: 'keyhUw0Sk9Rdn7Zcc'}).base('appqqHGWsuo8ClAGP');
+  var base = new Airtable({apiKey: key}).base(base);
   const newTotal = parseInt(currentValue) + 1;
 
   console.log(newTotal)
   console.log(attributes['data-record-id'].value)
 
-  base('Table 1').update(recordId, {
+  base(table).update(recordId, {
     [reactionType]: newTotal,
   }, function(err, record) {
     if (err) { console.error(err); return; }
