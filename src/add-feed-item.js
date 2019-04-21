@@ -12,7 +12,7 @@ const tag = {
 const sendReaction = (event) => {
   const feedButton = document.querySelector('#nff-init');
   const key = feedButton.getAttribute('data-airtable-key');
-  const base = feedButton.getAttribute('data-airtable-base');
+  const tableBase = feedButton.getAttribute('data-airtable-base');
   const table = feedButton.getAttribute('data-airtable-table');
 
   const { attributes } = event.srcElement;
@@ -28,7 +28,7 @@ const sendReaction = (event) => {
   console.log(newTotal)
   console.log(attributes['data-record-id'].value)
 
-  base(table).update(recordId, {
+  base(tableBase).update(recordId, {
     [reactionType]: newTotal,
   }, function(err, record) {
     if (err) { console.error(err); return; }
