@@ -51,10 +51,9 @@ const styles = `
 }
 
 .feed {
-  padding: 10px 15px;
   position: relative;
   overflow-y: scroll;
-  height: calc(100% - 70px);
+  height: calc(100% - 50px);
 }
 p {
   line-height: 20px;
@@ -62,7 +61,6 @@ p {
 
 .feed-item-v1 {
   border-bottom: 1px solid #E8E8E8;
-  margin: 10px auto;
   padding: 20px;
   background: white;
   color: #383838;
@@ -78,7 +76,8 @@ p {
 
 
 .feed-item-v1 > p {
-  margin: 5px 0 20px 0;
+  font-size: 16px;
+  margin: 12px 0 12px 0;
 }
 
 
@@ -135,23 +134,69 @@ p {
   font-weight: bold;
 }
 
-.nff-reaction-footer {
-  margin-top: 10px;
+.nff-footer-item {
   display: flex;
-  justify-content: center;
-  height: 20px;
+  justify-content: space-between;
+  height: auto;
   width: 100%;
+  position: relative;
+  margin-bottom: 20px;
 }
-.nff-reaction-footer > button {
+.nff-footer-item > a {
+  background: #00e399;
+  border-radius: 4px;
+  font-family: Helvetica-Bold;
+  font-size: 14px;
+  color: #4A4A4A;
+  padding: 6px 14px;
+  text-align: center;
+  position: relative;
+  bottom: -28px;
+  max-height: 18px;
+  color: white;
+  text-decoration: none;
+}
+
+.nff-footer-item > a:hover {
+  background: #00b077;
+}
+
+.nff-footer-item > div  {
+  max-height: 40px;
+  max-width: 120px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.nff-footer-item > div > p  {
+  color: #9AAEBC;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.nff-footer-item > div >  div > button {
   outline: none;
   font-size: 24px;
   background: transparent;
+  color: white;
   height: 100%;
-  width: auto;
-  margin-right: 5px;
+  margin-bottom: 0;
   cursor: pointer;
   border: none;
+  transition: font-size 0.2s;
 }
+
+.nff-footer-item > div >  div > button:hover {
+  font-size: 32px;
+}
+
+.selected {
+  font-size: 32px !important;
+}
+
 
 `
 
